@@ -1,0 +1,277 @@
+body {
+	margin: 0;
+	padding: 0;
+	
+	font-family: Noto Sans Light;
+	font-size: 16px;
+	background-color: #fafafa;
+	/**//**//**//**//**//**//**//**//**//**//**//*
+	** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	** Forces the scrollbar track to be shown even
+	** if there is no content to scroll through.
+	** Note that if 'overflow' is used instead of
+	** 'overflow-y', a purple bar appears at the
+	** bottom of the webpage.
+	** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	overflow-y: scroll;
+	____________________________________________*/
+}
+
+a {
+	/*Removes styling from all attributes.*/
+	all: unset;
+}
+
+/*************************************************
+**               CUSTOM SCROLLBAR               **
+*************************************************/
+/* Custom scrollbar css. Only works for modern
+** Blink and WebKit based browsers. Otherwise a
+** standard scrollbar is displayed.*/
+body::-webkit-scrollbar {
+	width: 10px;
+	/* A linear, top-to-bottom gradient of the
+	** accent colour to white.*/
+	background: linear-gradient(to bottom,
+				#7e3cf0 0% 10px,
+				rgba(0, 0, 0, 0.2) 100px,
+				#fafafa 90%);
+}
+
+/* Thumb styling. */
+body::-webkit-scrollbar-thumb {
+	border-left: 2px solid rgba(0, 0, 0, 0.7);
+}
+
+/* Scrollbar top button.*/
+body::-webkit-scrollbar-button:decrement {
+	height: 3px;
+	background-color: #7e3cf0;
+}
+
+/*************************************************
+**                NAVIGATION BAR                **
+*************************************************/
+#navigationBarContainer {
+	/* Keeps the navigation bar above the
+	** directory.*/
+	z-index: 1;
+	width: 100%;
+	/* Create a shadow underneath the entire
+	** navigation bar. Putting the shadow here
+	** instead of "#navigationBar" prevents the
+	** shadow blur from affecting the accent above
+	** it.*/
+	box-shadow: 0 1px 6px;
+	/*Fix at the top of the page.*/
+	position: fixed;
+	top: 0;
+	/* Required otherwise the navigation bar is
+	** transparent.*/
+	background-color: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(4px);
+}
+
+#navigationBarAccent {
+	width: 100%;
+	height: 3px;
+	background-color: #7e3cf0;
+}
+
+/* The next two sections center the buttons on the navigation bar.*/
+#navigationBar {
+	float: left;
+	position: relative;
+	left: 50%;
+}
+
+#navigationButtons {
+	float: left;
+	position: relative;
+	left: -50%;
+}
+
+#navigationButtons .hamburger {
+	display: none;
+}
+
+#navigationButtons a {
+	float: left;
+	/* Element size includes padding values
+	** instead of adding the padding to the
+	** outside of the div.*/
+	padding: 10px 24px;
+	font-size: 1.5em;
+	/*Creates the colour transition animation by displacing an oversized background gradient and moving its position on hover.*/
+	background: linear-gradient(to top, #7e3cf0 50%, transparent 50%);
+	background-size: 100% 200%;
+	background-position: 100% 0%;
+	transition: background-position 150ms ease;
+	text-decoration: none;
+}
+
+#navigationButtons a:hover {
+	/* Same colour as the navigation bar accent
+	** "#navigationBarAccent".*/
+	background-position: 100% -100%;
+	color: white;
+}
+
+/*************************************************
+**                   CONTENT                    **
+*************************************************/
+/* Containes multiple side-by-side windows.*/
+#pageContainer {
+	/* -Top margin stops content from overlapping
+	**  with the navigation bar.
+	** -Bottom margin separates content from the
+	**  the bottom of the page.
+	** -The left and right margins centre the
+	**  element on the page.*/
+	margin: 80px 0 50px 0;
+}
+
+#content {
+	padding-left: 320px;
+	padding-right: 320px;
+}
+
+#siteDirectory {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background-color: #ccc;
+	width: 250px;
+	padding: 80px 20px 0 20px;
+	overflow-y: scroll;
+	direction: rtl;
+}
+
+#siteDirectory::-webkit-scrollbar {
+	width: 10px;
+	background: #ccc;
+}
+
+#siteDirectory::-webkit-scrollbar-thumb {
+	border-right: 1px solid black;
+}
+
+#siteDirectory::-webkit-scrollbar-button:decrement {
+	height: 100px;
+}
+
+#siteDirectory::-webkit-scrollbar-button:increment {
+	height: 1em;
+}
+
+#siteDirectory>div {
+	direction: ltr;
+}
+
+#pageDirectory {
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 250px;
+	padding: 80px 20px 0 20px;
+	overflow-y: scroll;
+}
+
+#pageDirectoryContent {
+	position: fixed;
+	border-top: solid 1px black;
+	top: 130px;
+	bottom: 0;
+	/* The position-right and width must add
+	** to 250px, the width of the side bars so
+	** that the padding is sufficient for the
+	** central content.*/
+	right: 10px;
+	width: 240px;
+	padding: 0 20px;
+	margin-bottom: 400px;
+	overflow-y: auto;
+}
+
+#pageDirectory::-webkit-scrollbar {
+	display: none;
+}
+
+#pageDirectoryContent::-webkit-scrollbar {
+	width: 1px;
+	background: #ccc;
+}
+
+#pageDirectoryContent::-webkit-scrollbar-thumb {
+	background: black;
+}
+
+/*************************************************
+**                 WIDTH STYLING                **
+*************************************************/
+@media only screen and (min-width: 2400px) {
+	#content {
+		width: 1760px;
+	}
+	
+	/**********
+	
+	TO-DO HERE:
+	STOP PAGE DIRECTORY FROM MOVING TO THE RIGHT ONCE THE MAXIMUM CONTENT WIDTH HAS BEEN REACHED
+	
+	
+	
+	************/
+}
+@media only screen and (max-width: 1200px) {
+	#pageDirectory {
+		display: none;
+	}
+	#siteDirectory {
+		display: none;
+	}
+	/**//**//**//**//**//**//**//**//**//**//**//*
+	** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	** The following causes the content of the
+	** page to remain the same width after the
+	** directories are removed from the page.
+	** Note: I'm not really sure why these numbers
+	** seem to work as well as they do but I'll
+	** leave that to be figured out later.
+	** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	#content {
+		padding-left: calc(-100px + 35vw);
+		padding-right: calc(-100px + 35vw);
+	}
+	______________________________________________
+	** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	** The following causes the content of the
+	** page to fill the page (up to the margins)
+	** after the directories are removed from the
+	** page.
+	** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	*/
+	#content {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+	/*
+	____________________________________________*/
+}
+@media only screen and (max-width: 600px) {
+	#navigationButtons :not(.hamburger) {
+		display: none;
+	}
+	#navigationButtons .hamburger {
+		display: initial;
+	}
+	#navigationBar { left: 0 }
+	#navigationButtons { left: 0% }
+}
+
+
+/*****
+SORT A HREFs IN #content AS THEY HAVE NO STYLING
+*****/
