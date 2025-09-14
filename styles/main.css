@@ -12,12 +12,16 @@ body {
 .flexbox {
   display: flex;
 }
-.container {
-  max-width: 1000px;
+.container > .flexbox {
   margin: 0 auto;
+  max-width: 1000px;
+}
+.container#header {
+  background-color: lightblue;
 }
 #header .flexbox {
   justify-content: space-between;
+  background-color: lightcyan;
 }
 .sticky {
   position: fixed;
