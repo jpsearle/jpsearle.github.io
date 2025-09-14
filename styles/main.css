@@ -8,11 +8,15 @@ body {
   width: 1000px;
   margin: 0 auto;
 }
-#header.flexbox {
+#header .flexbox {
   justify-content: space-between;
 }
 .sticky {
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
+}
+#header {
+  backdrop-filter: blur(8px);
 }
