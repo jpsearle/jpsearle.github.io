@@ -19,6 +19,7 @@ body {
   left: 0;
   width: 30%;
   background-color: aquamarine;
+  overflow: hidden;
 }
 #content {
   right: 0;
