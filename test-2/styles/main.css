@@ -6,6 +6,7 @@ body {
   margin: 0;
   height: 100%;
   font-family: sans-serif;
+  color: #202020;
 }
 .side-container {
   position: absolute;
@@ -38,5 +39,5 @@ body {
 
 #navigation a {
   text-decoration: none;
-  color: #202020;
+  color: unset;
 }
