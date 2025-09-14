@@ -19,6 +19,9 @@ body {
 .container#header {
   background-color: lightblue;
 }
+.container {
+  padding: 4px 20px;
+}
 #header .flexbox {
   justify-content: space-between;
   background-color: lightcyan;
@@ -31,7 +34,6 @@ body {
 }
 #header {
   backdrop-filter: blur(8px);
-  padding: 4px 0;
 }
 
 .dropdown-container {
@@ -53,4 +55,16 @@ body {
   --dropdown-buffer-size: 24px;
   margin: calc(-1 * var(--dropdown-buffer-size));
   padding: var(--dropdown-buffer-size);
+}
+
+.container#navigation-bar {
+  margin-top: 30px;
+  background-color: lightcoral;
+}
+
+#navigation-bar ul {
+  list-style-type: none;
+  background-color: pink;
+  gap: 40px;
+  padding: unset;
 }
