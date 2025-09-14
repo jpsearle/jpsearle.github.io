@@ -1,5 +1,13 @@
+:root {
+  --background-color: #ecedf3;
+}
+:root.dark-mode {
+  --background-color: #474747;
+}
+
 body {
   margin: 0;
+  background-color: var(--background-color)
 }
 .flexbox {
   display: flex;
