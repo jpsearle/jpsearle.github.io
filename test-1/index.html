@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>James Earle – Homepage</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <script src="scripts/toggle-dark-mode.js"></script>
+</head>
+<body>
+  <div class="container sticky" id="header">
+    <div class="flexbox">
+      <div id="logo"><a href="" target="_self">«username»</a></div>
+
+      <div class="flexbox" id="accessibility-settings">
+        <div class="dropdown-container" id="contrast-selector">
+          <div class="dropdown-button">«contrast»</div>
+          <div class="dropdown-content">
+            <ul>
+              <li>Disabled</li>
+              <li>Achromatopsia</li>
+              <li>Protanomaly</li>
+              <li>Protanopia</li>
+              <li>Deuteranomaly</li>
+              <li>Deuteranopia</li>
+              <li>Tritanomaly</li>
+              <li>Tritanopia</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dropdown-container" id="light-dark-mode-selector">
+          <div onclick="toggleDarkMode()">«light/dark mode»</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="navigation-bar">
+    <ul class="flexbox">
+      <li><a href="pages/cv.html" target="_self">cv</a></li>
+      <li><a href="#" target="_self">header link two</a></li>
+      <li><a href="#" target="_self">header link three</a></li>
+    </ul>
+  </div>
+</body>
+</html>
