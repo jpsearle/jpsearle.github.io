@@ -19,4 +19,26 @@ body {
 }
 #header {
   backdrop-filter: blur(8px);
+  padding: 4px 0;
+}
+
+.dropdown-container {
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  right: 0;
+}
+.dropdown-button:hover + .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+  position: absolute;
+  /***
+  Adds a buffer zone beyond the border of the
+  dropdown in which the dropdown-content
+  remains visible.
+  ***/
+  --dropdown-buffer-size: 24px;
+  margin: calc(-1 * var(--dropdown-buffer-size));
+  padding: var(--dropdown-buffer-size);
 }
