@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+}
+.flexbox {
+  display: flex;
+}
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+#header.flexbox {
+  justify-content: space-between;
+}
+.sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
