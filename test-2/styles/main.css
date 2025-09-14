@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+}
+.flexbox {
+  display: flex;
+}
+.page-container {
+  height: 100%;
+}
+
+.navigation {
+  background-color: aquamarine;
+}
+
+.content {
+  background-color: bisque;
+}
